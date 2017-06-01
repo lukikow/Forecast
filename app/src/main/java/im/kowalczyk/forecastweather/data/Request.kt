@@ -1,4 +1,4 @@
-package im.kowalczyk.forecastweather
+package im.kowalczyk.forecastweather.data
 
 import android.util.Log
 import java.net.URL

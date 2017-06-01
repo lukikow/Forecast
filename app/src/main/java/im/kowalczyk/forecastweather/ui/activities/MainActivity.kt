@@ -1,9 +1,11 @@
-package im.kowalczyk.forecastweather
+package im.kowalczyk.forecastweather.ui.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import im.kowalczyk.forecastweather.R
+import im.kowalczyk.forecastweather.ui.adapters.ForecastListAdapter
 
 class MainActivity : AppCompatActivity() {
 

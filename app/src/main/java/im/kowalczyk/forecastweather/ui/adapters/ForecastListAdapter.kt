@@ -1,4 +1,4 @@
-package im.kowalczyk.forecastweather
+package im.kowalczyk.forecastweather.ui.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
