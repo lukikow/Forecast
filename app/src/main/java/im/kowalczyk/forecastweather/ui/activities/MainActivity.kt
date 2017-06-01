@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import im.kowalczyk.forecastweather.R
-import im.kowalczyk.forecastweather.data.Request
+import im.kowalczyk.forecastweather.data.ForecastRequest
 import im.kowalczyk.forecastweather.ui.adapters.ForecastListAdapter
 import org.jetbrains.anko.find
 import org.jetbrains.anko.doAsync
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
                 "APPID=15646a06818f61f7b8d7823ca833e1ce&q=94043&mode=json&units=metric&cnt=7"
 
         doAsync {
-            Request(url).run()
+            ForecastRequest(url).run()
             uiThread { longToast("Request performed")}
         }
     }
