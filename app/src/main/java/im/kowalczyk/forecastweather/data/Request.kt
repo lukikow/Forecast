@@ -2,6 +2,7 @@ package im.kowalczyk.forecastweather.data
 
 import android.util.Log
 import java.net.URL
+import com.google.gson.Gson
 
 /**
  * Created by lkowalczyk on 01.06.2017.
@@ -16,6 +17,9 @@ class ForecastRequest(val zipCode: String) {
         private val COMPLETE_URL = "$URL&APPID=$APP_ID&q="
     }
 
-
+    fun execute(): ForecastResult {
+        val forecastJsonStr = URL(COMPLETE_URL + zipCode).readText()
+        return  Gson().fromJson(forecastJsonStr, ForecastResult::class.java)
+    }
 
 }
