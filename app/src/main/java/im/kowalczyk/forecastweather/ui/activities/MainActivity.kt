@@ -22,10 +22,11 @@ class MainActivity : AppCompatActivity() {
         val forecastList : RecyclerView = find(R.id.forecast_list)
         forecastList.layoutManager = LinearLayoutManager(this)
 
+        val zipCode: String = "32-500"
 
         doAsync {
             //ForecastRequest(url).run()
-            val result = RequestForecastCommand("32-500").execute()
+            val result = RequestForecastCommand(zipCode).execute()
             uiThread {
                 forecastList.adapter = ForecastListAdapter(result)
             }
