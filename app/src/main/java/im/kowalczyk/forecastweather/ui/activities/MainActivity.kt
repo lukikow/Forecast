@@ -6,12 +6,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import im.kowalczyk.forecastweather.R
 import im.kowalczyk.forecastweather.data.ForecastRequest
+import im.kowalczyk.forecastweather.domain.Forecast
 import im.kowalczyk.forecastweather.domain.RequestForecastCommand
 import im.kowalczyk.forecastweather.ui.adapters.ForecastListAdapter
-import org.jetbrains.anko.find
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
-import org.jetbrains.anko.longToast
+import org.jetbrains.anko.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,7 +26,12 @@ class MainActivity : AppCompatActivity() {
             //ForecastRequest(url).run()
             val result = RequestForecastCommand(zipCode).execute()
             uiThread {
-                forecastList.adapter = ForecastListAdapter(result)
+                forecastList.adapter = ForecastListAdapter(result,
+                        object : ForecastListAdapter.OnItemClickListener {
+                            override fun invoke(forecast: Forecast) {
+                                toast(forecast.date)
+                            }
+                        })
             }
         }
     }
