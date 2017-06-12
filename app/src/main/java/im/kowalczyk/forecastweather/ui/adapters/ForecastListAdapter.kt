@@ -12,7 +12,7 @@ import im.kowalczyk.forecastweather.domain.ForecastList
 class ForecastListAdapter(val weekForest: ForecastList) : RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {
     override fun onBindViewHolder(p0: ViewHolder?, p1: Int) {
         with(weekForest.dailyForecast[p1]) {
-            p0?.textView?.text = "$date - $description - $high/$low"
+            p0?.textView?.text = "$speed - $date - $description - $high/$low"
         }
     }
 

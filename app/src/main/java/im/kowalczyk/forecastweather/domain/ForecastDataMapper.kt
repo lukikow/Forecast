@@ -27,7 +27,7 @@ class ForecastDataMapper {
     }
 
     private fun convertForecastItemToDomain(forecast: Forecast): ModelForecast {
-        return ModelForecast(convertDate(forecast.dt), forecast.weather[0].description, forecast.temp.max.toInt(), forecast.temp.min.toInt())
+        return ModelForecast(forecast.speed, convertDate(forecast.dt), forecast.weather[0].description, forecast.temp.max.toInt(), forecast.temp.min.toInt())
     }
 
     private fun convertDate(date: Long): String {
