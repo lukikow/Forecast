@@ -20,6 +20,7 @@ class ForecastListAdapter(val weekForest: ForecastList,
                           val itemClick: OnItemClickListener) : RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(p0: ViewHolder?, p1: Int) {
+        //weekForest[p01] mean weekForest.get(p1)
         p0?.bindForecast(weekForest[p1])
 
     }
