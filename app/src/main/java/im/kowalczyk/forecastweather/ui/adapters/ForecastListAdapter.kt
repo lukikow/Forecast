@@ -20,7 +20,7 @@ class ForecastListAdapter(val weekForest: ForecastList,
                           val itemClick: OnItemClickListener) : RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(p0: ViewHolder?, p1: Int) {
-        p0?.bindForecast(weekForest.dailyForecast[p1])
+        p0?.bindForecast(weekForest[p1])
 
     }
 
@@ -29,7 +29,7 @@ class ForecastListAdapter(val weekForest: ForecastList,
         return ViewHolder(view, itemClick)
     }
 
-    override fun getItemCount(): Int = weekForest.dailyForecast.size
+    override fun getItemCount(): Int = weekForest.size()
 
 
     class ViewHolder(view: View,
