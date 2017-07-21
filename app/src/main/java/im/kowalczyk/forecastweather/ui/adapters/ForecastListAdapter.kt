@@ -17,7 +17,7 @@ import org.jetbrains.anko.find
  */
 
 class ForecastListAdapter(val weekForest: ForecastList,
-                          val itemClick: OnItemClickListener) : RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {
+                          val itemClick: (Forecast) -> Unit) : RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(p0: ViewHolder?, p1: Int) {
         //weekForest[p01] mean weekForest.get(p1)
@@ -34,7 +34,7 @@ class ForecastListAdapter(val weekForest: ForecastList,
 
 
     class ViewHolder(view: View,
-                     val itemClick: OnItemClickListener) : RecyclerView.ViewHolder(view) {
+                     val itemClick: (Forecast) -> Unit) : RecyclerView.ViewHolder(view) {
         private val iconView: ImageView
         private val dateView: TextView
         private val descriptionView: TextView
