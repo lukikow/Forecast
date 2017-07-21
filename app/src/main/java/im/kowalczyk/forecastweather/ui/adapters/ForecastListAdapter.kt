@@ -61,10 +61,5 @@ class ForecastListAdapter(val weekForest: ForecastList,
         }
 
     }
-
-    interface OnItemClickListener {
-        operator fun invoke(forecast: Forecast)
-    }
-
 }
 
