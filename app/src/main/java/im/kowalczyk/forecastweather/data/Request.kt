@@ -5,7 +5,7 @@ import java.net.URL
 import com.google.gson.Gson
 
 /**
- * Created by lkowalczyk on 01.06.2017.
+ * Created by lukikow on 01.06.2017.
  */
 
 class ForecastRequest(val zipCode: String) {

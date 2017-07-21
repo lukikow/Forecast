@@ -1,7 +1,7 @@
 package im.kowalczyk.forecastweather.data
 
 /**
- * Created by lkowalczyk on 01.06.2017.
+ * Created by lukikow on 01.06.2017.
  */
 
 data class ForecastResult(val city: City, val list: List<Forecast>)

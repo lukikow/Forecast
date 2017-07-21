@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 import im.kowalczyk.forecastweather.domain.Forecast as ModelForecast
 
 /**
- * Created by lkowalczyk on 01.06.2017.
+ * Created by lukikow on 01.06.2017.
  */
 
 class ForecastDataMapper {

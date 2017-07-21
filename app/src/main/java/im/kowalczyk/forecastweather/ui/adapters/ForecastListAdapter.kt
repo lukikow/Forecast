@@ -13,7 +13,7 @@ import im.kowalczyk.forecastweather.R
 import org.jetbrains.anko.find
 
 /**
- * Created by lkowalczyk on 31.05.2017.
+ * Created by lukikow on 31.05.2017.
  */
 
 class ForecastListAdapter(val weekForest: ForecastList,
