@@ -35,12 +35,13 @@ class ForecastListAdapter(val weekForest: ForecastList,
 
     class ViewHolder(view: View,
                      val itemClick: (Forecast) -> Unit) : RecyclerView.ViewHolder(view) {
-        private val iconView: ImageView
-        private val dateView: TextView
-        private val descriptionView: TextView
-        private val maxTemperatureView: TextView
-        private val minTemperatureView: TextView
+        private val iconView: ImageView = view.find(R.id.icon)
+        private val dateView: TextView = view.find(R.id.date)
+        private val descriptionView: TextView = view.find(R.id.description)
+        private val maxTemperatureView: TextView = view.find(R.id.maxTemperature)
+        private val minTemperatureView: TextView = view.find(R.id.minTemperature)
 
+        /**initiate value
         init {
             iconView = view.find(R.id.icon)
             dateView = view.find(R.id.date)
@@ -48,6 +49,7 @@ class ForecastListAdapter(val weekForest: ForecastList,
             maxTemperatureView = view.find(R.id.maxTemperature)
             minTemperatureView = view.find(R.id.minTemperature)
         }
+        */
 
         fun bindForecast(forecast: Forecast) {
             with(forecast) {
