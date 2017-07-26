@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import im.kowalczyk.forecastweather.R
-import im.kowalczyk.forecastweather.data.ForecastRequest
-import im.kowalczyk.forecastweather.domain.Forecast
 import im.kowalczyk.forecastweather.domain.RequestForecastCommand
 import im.kowalczyk.forecastweather.ui.adapters.ForecastListAdapter
 import org.jetbrains.anko.*
