@@ -1,6 +1,7 @@
 package im.kowalczyk.forecastweather.ui
 
 import android.app.Application
+import im.kowalczyk.forecastweather.ui.utils.DelegatesExt
 
 /**
  * Created by lkowalczyk on 27.07.2017.
@@ -9,8 +10,7 @@ import android.app.Application
 class App : Application() {
 
     companion object {
-        private var instance: Application? = null
-        fun instance() = instance!!
+        var instance: App by DelegatesExt.notNullSingleValue()
     }
 
     override fun onCreate() {
