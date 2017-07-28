@@ -1,7 +1,7 @@
 package im.kowalczyk.forecastweather.domain
 
-import im.kowalczyk.forecastweather.data.Forecast
-import im.kowalczyk.forecastweather.data.ForecastResult
+import im.kowalczyk.forecastweather.data.server.Forecast
+import im.kowalczyk.forecastweather.data.server.ForecastResult
 import java.text.DateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit

@@ -1,4 +1,4 @@
-package im.kowalczyk.forecastweather.data
+package im.kowalczyk.forecastweather.data.server
 
 /**
  * Created by lukikow on 01.06.2017.

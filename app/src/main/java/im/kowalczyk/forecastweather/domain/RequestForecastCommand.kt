@@ -1,6 +1,6 @@
 package im.kowalczyk.forecastweather.domain
 
-import im.kowalczyk.forecastweather.data.ForecastRequest
+import im.kowalczyk.forecastweather.data.server.ForecastRequest
 
 /**
  * Created by lukikow on 01.06.2017.
