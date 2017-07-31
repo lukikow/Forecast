@@ -3,7 +3,6 @@ package im.kowalczyk.forecastweather.ui.activities
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import im.kowalczyk.forecastweather.R
 import im.kowalczyk.forecastweather.domain.RequestForecastCommand
@@ -19,14 +18,13 @@ class MainActivity : AppCompatActivity() {
         //val forecastList : RecyclerView = find(R.id.forecast_list)
         forecastList.layoutManager = LinearLayoutManager(this)
 
-        val zipCode: String = "32-500"
+        val zipCode: Long = 32500
 
         doAsync {
             //ForecastRequest(url).run()
             val result = RequestForecastCommand(zipCode).execute()
             uiThread {
-                forecastList.adapter = ForecastListAdapter(result) {
-                    toast(it.date)}
+                forecastList.adapter = ForecastListAdapter(result, {toast(it.description)})
             }
         }
     }

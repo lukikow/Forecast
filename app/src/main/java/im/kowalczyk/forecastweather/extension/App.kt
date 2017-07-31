@@ -1,4 +1,4 @@
-package im.kowalczyk.forecastweather.ui
+package im.kowalczyk.forecastweather.extension
 
 import android.app.Application
 import im.kowalczyk.forecastweather.ui.utils.DelegatesExt

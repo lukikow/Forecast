@@ -2,7 +2,7 @@ package im.kowalczyk.forecastweather.data.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import im.kowalczyk.forecastweather.ui.App
+import im.kowalczyk.forecastweather.extension.App
 import org.jetbrains.anko.db.*
 
 /**

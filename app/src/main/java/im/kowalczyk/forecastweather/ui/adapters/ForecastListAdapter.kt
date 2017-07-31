@@ -9,6 +9,8 @@ import com.squareup.picasso.Picasso
 import im.kowalczyk.forecastweather.domain.Forecast
 import im.kowalczyk.forecastweather.domain.ForecastList
 import im.kowalczyk.forecastweather.R
+import java.text.DateFormat
+import java.util.*
 
 /**
  * Created by lukikow on 31.05.2017.
@@ -37,7 +39,7 @@ class ForecastListAdapter(val weekForest: ForecastList,
         fun bindForecast(forecast: Forecast) {
             with(forecast) {
                 Picasso.with(itemView.context).load(iconUrl).into(itemView.icon)
-                itemView.date.text = date
+                itemView.date.text = convertDate(date)
                 itemView.description.text = description
                 itemView.maxTemperature.text = "$high"
                 itemView.minTemperature.text = "$low"
@@ -45,6 +47,10 @@ class ForecastListAdapter(val weekForest: ForecastList,
             }
         }
 
+        private fun convertDate(date: Long): String {
+            val df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault())
+            return df.format(date)
+        }
     }
 }
 
