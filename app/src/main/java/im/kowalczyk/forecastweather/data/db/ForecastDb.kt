@@ -2,13 +2,10 @@ package im.kowalczyk.forecastweather.data.db
 
 import im.kowalczyk.forecastweather.domain.ForecastDataSource
 import im.kowalczyk.forecastweather.domain.ForecastList
-import im.kowalczyk.forecastweather.extension.clear
-import im.kowalczyk.forecastweather.extension.parseList
-import im.kowalczyk.forecastweather.extension.parseOpt
-import im.kowalczyk.forecastweather.extension.toVarargArray
-import org.jetbrains.anko.db.select
+import im.kowalczyk.forecastweather.extension.*
 import org.jetbrains.anko.db.insert
-import java.util.*
+import org.jetbrains.anko.db.select
+import kotlin.collections.HashMap
 
 /**
  * Created by lkowalczyk on 28.07.2017.
@@ -26,6 +23,13 @@ class ForecastDb(val forecastDbHelper: ForecastDbHelper = ForecastDbHelper.insta
                 .parseOpt{CityForecast(HashMap(it), dailyForecast)}
 
         if(city != null) dataMapper.convertToDomain(city) else null
+    }
+
+    override fun requestDayForecast(id: Long) = forecastDbHelper.use{
+        val forecast = select(DayForecastTable.NAME).byId(id)
+                .parseOpt { DayForecast(HashMap(it)) }
+
+        if (forecast != null) dataMapper.convertDayToDomain(forecast) else null
     }
 
     fun saveForecast(forecast: ForecastList) = forecastDbHelper.use {

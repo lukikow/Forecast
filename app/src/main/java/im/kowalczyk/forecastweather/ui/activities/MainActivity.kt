@@ -15,16 +15,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //val forecastList : RecyclerView = find(R.id.forecast_list)
         forecastList.layoutManager = LinearLayoutManager(this)
 
-        val zipCode: Long = 32500
-
         doAsync {
-            //ForecastRequest(url).run()
-            val result = RequestForecastCommand(zipCode).execute()
+            val result = RequestForecastCommand(94043).execute()
             uiThread {
-                forecastList.adapter = ForecastListAdapter(result, {toast(it.description)})
+                val adapter = ForecastListAdapter(result) {
+                    startActivity<DetailActivity>(DetailActivity.ID to it.id,
+                            DetailActivity.CITY_NAME to result.city)
+                }
+                forecastList.adapter = adapter
+                title = "${result.city} (${result.country})"
             }
         }
     }
