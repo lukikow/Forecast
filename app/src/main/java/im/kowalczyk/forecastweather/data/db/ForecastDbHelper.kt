@@ -25,6 +25,7 @@ class ForecastDbHelper(ctx : Context = App.instance) : ManagedSQLiteOpenHelper(c
         p0?.createTable(DayForecastTable.NAME, true,
                 DayForecastTable.ID to INTEGER + PRIMARY_KEY,
                 DayForecastTable.DATE to INTEGER,
+                DayForecastTable.ICON_URL to TEXT,
                 DayForecastTable.DESCRIPTION to TEXT,
                 DayForecastTable.HIGH to INTEGER,
                 DayForecastTable.LOW to INTEGER,

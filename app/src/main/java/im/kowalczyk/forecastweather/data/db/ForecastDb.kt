@@ -1,5 +1,6 @@
 package im.kowalczyk.forecastweather.data.db
 
+import im.kowalczyk.forecastweather.domain.ForecastDataSource
 import im.kowalczyk.forecastweather.domain.ForecastList
 import im.kowalczyk.forecastweather.extension.clear
 import im.kowalczyk.forecastweather.extension.parseList
@@ -12,9 +13,9 @@ import java.util.*
 /**
  * Created by lkowalczyk on 28.07.2017.
  */
-class ForecastDb(val forecastDbHelper: ForecastDbHelper = ForecastDbHelper.instance, val dataMapper: DbDataMapper = DbDataMapper()) {
+class ForecastDb(val forecastDbHelper: ForecastDbHelper = ForecastDbHelper.instance, val dataMapper: DbDataMapper = DbDataMapper()) : ForecastDataSource {
 
-    fun requestForecastByZipCode(zipCode: Long, date: Long) = forecastDbHelper.use {
+    override fun requestForecastByZipCode(zipCode: Long, date: Long) = forecastDbHelper.use {
         val dailyRequest = "${DayForecastTable.CITY_ID} = ? AND ${DayForecastTable.DATE} >= ?"
         val dailyForecast = select(DayForecastTable.NAME)
                 .whereSimple(dailyRequest, zipCode.toString(), date.toString())

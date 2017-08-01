@@ -1,8 +1,6 @@
-package im.kowalczyk.forecastweather.domain
+package im.kowalczyk.forecastweather.data.server
 
-import im.kowalczyk.forecastweather.data.server.Forecast
-import im.kowalczyk.forecastweather.data.server.ForecastResult
-import java.text.DateFormat
+import im.kowalczyk.forecastweather.domain.ForecastList
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -12,8 +10,8 @@ import im.kowalczyk.forecastweather.domain.Forecast as ModelForecast
  * Created by lukikow on 01.06.2017.
  */
 
-class ForecastDataMapper {
-    fun convertFromDataModel(zipCode: Long, forecast: ForecastResult) = with(forecast) {
+class ServerDataMapper {
+    fun convertToDomain(zipCode: Long, forecast: ForecastResult) = with(forecast) {
         ForecastList(zipCode, city.name, city.country, convertForecastListToDomain(list))
     }
 
